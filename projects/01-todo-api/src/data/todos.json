@@ -1,0 +1,22 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "title": "Learn Node.js",
+    "description": "Complete the Node.js roadmap course",
+    "completed": false,
+    "priority": "high",
+    "dueDate": "2024-12-31T23:59:59.999Z",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "title": "Build REST API",
+    "description": "Create a complete REST API using Express.js",
+    "completed": true,
+    "priority": "medium",
+    "dueDate": null,
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "updatedAt": "2024-01-05T00:00:00.000Z"
+  }
+] 

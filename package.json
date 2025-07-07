@@ -1,0 +1,66 @@
+{
+  "name": "nodejs-learning-roadmap",
+  "version": "1.0.0",
+  "description": "Một roadmap học Node.js từ cơ bản đến nâng cao với các bài tập thực hành",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --version && echo 'Node.js Learning Roadmap - Chào mừng bạn!'",
+    "test": "node test-setup.js",
+    "learning-guide": "echo '📚 Xem file LEARNING-GUIDE.md để hiểu cách học hiệu quả với câu hỏi trọng tâm!'",
+    "lesson1": "echo 'Bài 1: Node.js Basics' && node 01-nodejs-basics/examples/hello.js",
+    "lesson1-examples": "node 01-nodejs-basics/examples/hello.js && echo '---' && node 01-nodejs-basics/examples/event-loop.js && echo '---' && node 01-nodejs-basics/examples/process-demo.js",
+    "lesson1-ex1": "node 01-nodejs-basics/exercises/system-info.js",
+    "lesson1-ex2": "node 01-nodejs-basics/exercises/calculator.js 10 + 5",
+    "lesson1-ex3": "node 01-nodejs-basics/exercises/timer.js 10",
+    "lesson2": "echo 'Bài 2: NPM và Modules' && node 02-npm-and-modules/examples/use-module.js",
+    "lesson2-ex1": "node 02-npm-and-modules/exercises/string-utils.js",
+    "lesson3": "echo 'Bài 3: File System' && node 03-file-system/examples/file-operations.js",
+    "lesson4": "echo 'Bài 4: HTTP Server' && node 04-http-server/examples/simple-server.js",
+    "lesson4-todo": "node 04-http-server/exercises/todo-server.js",
+    "lesson5": "echo 'Bài 5: Express.js' && node 05-express-basics/examples/express-app.js",
+    "lesson13": "echo 'Bài 13: SQL Databases' && echo 'Xem 13-sql-databases/README.md để setup PostgreSQL'",
+    "lesson14": "echo 'Bài 14: Docker & Containerization' && echo 'Xem 14-docker-containerization/README.md để setup Docker'",
+    "project1": "cd projects/01-todo-api && npm run dev",
+    "project2": "cd projects/02-blog-api && npm run dev",
+    "project3": "cd projects/03-ecommerce-api && npm run dev",
+    "project4": "cd projects/04-task-management-sql && npm run dev",
+    "docker-todo": "cd projects/01-todo-api && npm run docker:up",
+    "docker-blog": "cd projects/02-blog-api && npm run docker:up",
+    "docker-ecommerce": "cd projects/03-ecommerce-api && npm run docker:up",
+    "docker-task": "cd projects/04-task-management-sql && npm run docker:up",
+    "setup-check": "node -e \"console.log('Node.js:', process.version); console.log('npm:', process.env.npm_version || 'N/A'); console.log('Platform:', process.platform); console.log('Setup OK!')\"",
+    "clean": "rm -rf node_modules package-lock.json || del /f /q node_modules package-lock.json",
+    "help": "echo '🚀 NODE.JS LEARNING ROADMAP' && echo '' && echo '📚 Hướng dẫn:' && echo '- npm run learning-guide: Xem hướng dẫn học tập' && echo '- npm run lesson1-5,13,14: Chạy các bài học' && echo '- npm run lesson1-ex1: System info' && echo '- npm run lesson4-todo: Todo HTTP server' && echo '- npm run lesson5: Express.js server' && echo '' && echo '🎯 Dự án:' && echo '- npm run project1-4: Chạy các dự án' && echo '- npm run docker-todo: Todo API với Docker' && echo '- npm run docker-blog: Blog API với Docker' && echo '- npm run docker-ecommerce: E-commerce API với Docker' && echo '- npm run docker-task: Task Management API với Docker' && echo '' && echo '🔧 Tiện ích:' && echo '- npm run test: Kiểm tra setup' && echo '- npm run setup-check: Kiểm tra nhanh' && echo '' && echo '📖 Xem package.json để biết thêm scripts'"
+  },
+  "keywords": [
+    "nodejs",
+    "learning",
+    "roadmap",
+    "tutorial",
+    "javascript",
+    "backend",
+    "education",
+    "vietnamese"
+  ],
+  "author": "Node.js Learning Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/nodejs-learning-roadmap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/nodejs-learning-roadmap/issues"
+  },
+  "homepage": "https://github.com/your-username/nodejs-learning-roadmap#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.5"
+  }
+} 
