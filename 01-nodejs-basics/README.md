@@ -13,19 +13,48 @@ Sau khi hoàn thành bài học này, bạn sẽ:
 Sau khi học xong bài này, bạn phải trả lời được:
 
 🔍 **Câu hỏi cơ bản:**
-- Node.js khác gì với JavaScript chạy trên browser?
-- Tại sao Node.js được gọi là "non-blocking I/O"?
-- Event Loop hoạt động như thế nào?
+
+
+1. Node.js khác gì với JavaScript chạy trên browser?
+- Khác về môi trường (nodejs chạy trên server còn js chạy trên browser ở client).
+- Có các api hỗ trợ khác nhau.
+- Khác nhau về mục đích sử dụng.
+2. Tại sao Node.js được gọi là "non-blocking I/O"?
+- Xử lý các tác vụ i/o(đọc file truy vấn csdl, call api) theo kiểu bất đồng bộ(asynchronous)
+- Thay vì chờ một tác vụ hoàn thành mới tiếp tục, Node.js sử dụng callback, Promise, hoặc async/await để xử lý sau khi I/O hoàn tất.
+- Nhờ đó, event loop của Node.js vẫn tiếp tục xử lý các yêu cầu khác mà không bị chặn.
+
+
+👉 Điều này giúp Node.js hiệu quả và nhanh khi xử lý nhiều kết nối cùng lúc.
+
+
+3. Event Loop hoạt động như thế nào?
+- Call Stack: Nơi chứa các hàm đang được thực thi.
+- Callback Queue: Nơi chứa các hàm callback chờ được xử lý (ví dụ: từ I/O, setTimeout...).
+- Event Loop liên tục kiểm tra nếu Call Stack rỗng thì sẽ đưa callback từ Queue vào Stack để thực thi.
 
 🔍 **Câu hỏi nâng cao:**
-- Callback Pattern giải quyết vấn đề gì?
-- Khi nào nên sử dụng `process.nextTick()`?
-- Tại sao Node.js phù hợp cho việc xây dựng API?
+1. Callback Pattern giải quyết vấn đề gì?
+- Callback pattern giúp xử lý tác vụ bất đồng bộ mà không chặn chương trình. Thay vì chờ kết quả, nó dùng hàm callback để xử lý sau khi hoàn thành. Nhược điểm: dễ gây callback hell nếu lồng nhiều.
+2. Khi nào nên sử dụng `process.nextTick()`?
+- Nên dùng process.nextTick() khi bạn muốn trì hoãn việc thực thi một hàm đến ngay sau khi vòng lặp hiện tại (event loop) kết thúc, nhưng trước khi các tác vụ async khác (như setTimeout, I/O...) chạy.
+3. Tại sao Node.js phù hợp cho việc xây dựng API?
+- Xử lý bất đồng bộ (Non-blocking I/O, Cho phép xử lý hàng ngàn request đồng thời mà không chặn luồng chính, Phù hợp với các API cần đọc/ghi CSDL, gọi dịch vụ ngoài (I/O nhiều)) 
+- Hiệu suất cao với Event Loop (Mô hình event-driven giúp xử lý nhiều kết nối một cách nhẹ và hiệu quả, đặc biệt là RESTful API hoặc WebSocket.)
+- Dễ phát triển với JavaScript
+- Hệ sinh thái mạnh (npm)
+- Dễ mở rộng theo chiều ngang (Phù hợp với kiến trúc microservices hoặc serverless (chia nhỏ API theo chức năng))
 
 🔍 **Câu hỏi thực hành:**
-- Làm thế nào để xử lý command line arguments?
-- Cách lắng nghe và xử lý system events?
-- Pháp biệt giữa `setTimeout` và `setImmediate`?
+1. Làm thế nào để xử lý command line arguments?
+- Dùng process.argv để đọc đối số, hoặc thư viện như minimist để parse dễ hơn.
+2. Cách lắng nghe và xử lý system events?
+- process object – Dùng để lắng nghe các sự kiện hệ thống
+- EventEmitter – Tự tạo và lắng nghe custom events (nội bộ app)
+3. Pháp biệt giữa `setTimeout` và `setImmediate`?
+- setTimeout(fn, 0) chạy sau ít nhất 0ms, sau khi các phase khác của event loop xong.
+- setImmediate(fn) chạy ngay ở phase check tiếp theo, thường nhanh hơn setTimeout(0).
+- setImmediate ưu tiên hơn và chạy sớm hơn setTimeout(0).
 
 ## 📖 Lý Thuyết
 
